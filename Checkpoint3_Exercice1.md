@@ -1,65 +1,107 @@
-## Partie 1 : Gestion des utilisateurs
-## Partie 2 : Restriction utilisateurs
+# Partie 1 : Gestion des utilisateurs
+
+### Q.1.1.1
+1. Première étape, trouver Kelly Rhameur  
+![1](https://github.com/user-attachments/assets/7299710a-18a7-45d4-8627-6eba31aa2778)
+![2](https://github.com/user-attachments/assets/59d8c6e3-b23d-40db-9e24-3d25df650bd0)
+
+2. Deuxième étape, créer Lionel Lemarchand avec les mêmes attirbuts que Kelly Rhammeur  
+![3](https://github.com/user-attachments/assets/15c1d295-a45b-44ea-982c-b9e941e6085e)
+![5](https://github.com/user-attachments/assets/e44451bd-198c-441b-bb9d-190e4fec7233)
 
 
-### Q.1.2.1 Faire en sorte que l'utilisateur Gabriel Ghul ne puisse se connecter que du lundi au vendredi, de 7h à 17h.
-![1 2 1 ghul 1](https://github.com/user-attachments/assets/26ee8856-280b-43a0-9e5a-4ddddf585e09)
+### Q.1.1.2
+1. Création de la nouvelle OU  
+![6](https://github.com/user-attachments/assets/63e7af30-e0f6-4233-b497-d0399dd9e5bc)
+![7](https://github.com/user-attachments/assets/87a60a92-37d9-4a28-a66f-e9117ff41910)
+
+2. Déplacement de Kelly dans cette nouvelle OU  
+![8](https://github.com/user-attachments/assets/0ab2dcb7-4270-4db7-af24-6d1941620163)
+
+3. Vérification que cela a fonctionné  
+![9](https://github.com/user-attachments/assets/eda38bbd-f2fc-43ab-9fdb-c191f1599ce1)
+
+4. Désactivation du compte de Kelly  
+![Capture d’écran 2025-01-21 143256](https://github.com/user-attachments/assets/f3bfa45c-e789-4862-b286-0a44071c90d1)  
 
 
-![1 2 1 ghul 2](https://github.com/user-attachments/assets/7bba2c58-1d43-41bc-9101-459373c0e943)
+### Q.1.1.3
+Suppression de Kelly du groupe de l'OU  
+![10](https://github.com/user-attachments/assets/aa519a5d-5f92-487f-b492-0f65af7333bb)
 
-![1 2 1 ghul 3](https://github.com/user-attachments/assets/9b3043ae-833a-4ec8-b649-3462b5002576)
 
-![1 2 1 ghul 4](https://github.com/user-attachments/assets/ca4c9f4a-cc5c-4ad0-af38-ef25bae39294)
-
-![1 2 1 ghul 5](https://github.com/user-attachments/assets/f1f4a05d-186e-4c92-8aab-85cfb3b847de)
-### Q.1.2.2 De même, bloquer sa connexion au seul ordinateur CLIENT01.
-### Dans account => Log On To => mettre le nom du PC demandé
-![image](https://github.com/user-attachments/assets/61efad3f-0b39-4d9d-bd6a-8d2f43801652)
+### Q.1.1.4
+Création du dossier individuel du nouvel utilisateur et archivage celui de Kelly Rhameur en le suffixant par -ARCHIVE  
+![11](https://github.com/user-attachments/assets/64e474ed-13ef-4284-ab7c-84e925a1c4f1)
 
 
 
-### Q.1.2.3 Mettre en place une stratégie de mot de passe pour durcir les comptes des utilisateurs de l'OU LabUsers.
+# Partie 2 : Restrictions utilisateurs
 
-![1 2 3 GPO 1](https://github.com/user-attachments/assets/dc0be852-4a68-4de5-af89-491e265cf818)
-
-![1 2 3 GPO 2](https://github.com/user-attachments/assets/68d58b17-0251-4892-9234-889ebe9f7ea0)
-
-![1 2 3 GPO 3](https://github.com/user-attachments/assets/dacab633-90c0-4752-a731-7fed1b4b62e8)
-
-![1 2 3 GPO 4](https://github.com/user-attachments/assets/d83a6602-b734-49a9-abf7-1e04709a17f5)
+### Q.1.2.1
+Restriction des heures de connection pour l'utilisateur Gabriel Ghul  
+![12](https://github.com/user-attachments/assets/57808364-cd7d-4c96-9bca-1eef629a97df)
 
 
-![1 2 3 GPO 5](https://github.com/user-attachments/assets/f7fd897f-5753-4d51-b704-74386818039c)
+### Q.1.2.2
+Permettre la connection de Gabriel uniquement du l'ordinateur CLIENT01  
+![13](https://github.com/user-attachments/assets/cdd980f0-4960-4522-b34b-666fab7d5393)
 
 
-![1 2 3 GPO 6](https://github.com/user-attachments/assets/d8608609-3aa3-4289-a23f-3a97805cb43e)
+### Q.1.2.3
+Création d'une GPO pour l'OU **LabUsers**  
+![14](https://github.com/user-attachments/assets/37774757-33fd-401e-ab70-e174f1e43f98)
+
+On lui donne un nom clair pour s'y retrouver facilement dans la gestion des GPO  
+![15](https://github.com/user-attachments/assets/4eaeda01-a16b-418a-9cf9-c77ec9d9d67e)
+
+On édite la GPO  
+![16](https://github.com/user-attachments/assets/b9539481-2aba-4a0c-abda-c8afbc27cb2b)
+
+- Pour gérer la `stratégie de mots de passe` dans le Group Policy Management Editor :
+  - Dérouler `Computer Configuration`
+  - Dérouler `Policies`
+  - Dérouler `Windows Settings`
+  - Dérouler `Security Settings`
+  - Dérouler `Account Policy`
+  - Cliquer sur `Password Policy`
+![17](https://github.com/user-attachments/assets/7ef42a4a-8f5e-4b08-99c8-9cfd034f7243)
+
+  - Afin de durcir les comptes utilisateurs de l'OU **LabUsers**, je fais les choix suivants
+![18](https://github.com/user-attachments/assets/e9628b93-c9b9-49c8-89cb-165afc45bb90)
+
+- Vérification de la GPO
+![25](https://github.com/user-attachments/assets/f3d48db1-8d98-44b8-9497-c980e687f9ad)
 
 
-![1 2 3 GPO 7](https://github.com/user-attachments/assets/38166df2-d52b-4135-a923-946a6a62419e)
 
-![1 2 3 GPO 8](https://github.com/user-attachments/assets/28774465-abec-4634-a3e6-632380eb0826)
+# Partie 3 : Lecteurs réseaux
 
-![1 2 3 GPO 9](https://github.com/user-attachments/assets/c0db10b0-6e53-46aa-a3f8-f43dabe54be6)
+### Q.1.3.1
+- Partage de `DossiersCommuns (E:)`  
+![Capture d’écran 2025-01-21 151840](https://github.com/user-attachments/assets/3d912cf0-b048-44e3-9925-ff69b7198d54)  
+- Réitérer la procédure pour `DossiersCommuns (F:)`
+- A chaque fois, bien penser à sauvegarder le `Network Path` qui sera nécessaire pour la suite
+![Capture d’écran 2025-01-21 152321](https://github.com/user-attachments/assets/eaf0a1fa-62c6-4b83-a7f3-fb3d3139d6b1)
 
+- Création de la nouvelle GPO **Drive_Mount**  
+![19](https://github.com/user-attachments/assets/d90896ed-66b1-4c55-9717-81fc231666a3)
 
-## Partie 3 : Lecteurs réseaux
+- Pour gérer la stratégie `Drive-Mount` dans le Group Policy Management Editor :
+  - Dérouler `User Configuration`
+  - Dérouler `Preference`
+  - Dérouler `Drive Maps`
+  - Dans la zone à droit, faire un clic droit
+  - Cliquer sur `New` puis sur `Mapped Drive`  
+![20](https://github.com/user-attachments/assets/22243253-ab2c-4a68-b7f4-6a918017bbf6)
 
-### Q.1.3.1 Créer une GPO Drive-Mount qui monte les lecteurs E: et F: sur les clients.
+- Remplir les champs comme suit pour le mappage de `DossiersCommuns (E:)`  
+![22](https://github.com/user-attachments/assets/c9d5a2e3-0482-4e6e-8f5f-96777e72603a)  
 
-![1 3 1 mappage 1](https://github.com/user-attachments/assets/18e76706-2223-4b6d-b396-b8dfe340fc5b)
+- Répéter l'action pour le mappage de `DossiersPersonnels (F:)`  
+  - La variable `%USERNAME%` utilise le nom d'utilisateur pour mapper automatiquement le dossier correspondant.  
+![21](https://github.com/user-attachments/assets/40a70e6a-86e6-4a71-884f-5b610e342a30)  
+![23](https://github.com/user-attachments/assets/f9b357c1-8fb6-4c85-9d54-a59bef36d7fe)
 
-![1 3 1 mappage 2](https://github.com/user-attachments/assets/fd432588-4025-41a8-b3df-9612fa7e3eac)
-
-![1 3 1 mappage 3](https://github.com/user-attachments/assets/635319b1-bb85-4c18-9a36-2af84eee92a1)
-
-
-![1 3 1 mappage 4](https://github.com/user-attachments/assets/56289d73-924e-4bb2-bf29-57993203624a)
-
-![1 3 1 mappage 5](https://github.com/user-attachments/assets/852007bd-0c36-4a45-959e-6f139743db63)
-
-![image](https://github.com/user-attachments/assets/e6d3b0ff-45ec-4d7d-a86d-dda097ce3e21)
-
-![image](https://github.com/user-attachments/assets/04328ad7-31da-4b4c-a67d-f5651412e84b)
-
-![image](https://github.com/user-attachments/assets/43f9bc02-428f-4c05-8269-957e078d2ebb)
+- Vérification de la GPO
+![24](https://github.com/user-attachments/assets/aab47fd3-752d-4995-a93d-1f1d8963fdfb)
