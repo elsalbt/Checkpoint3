@@ -1,9 +1,7 @@
 # Partie 1 : Gestion des utilisateurs
 
 ### Q.2.1.1
-Création d'un nouveau compte avec la commande `adduser`  
-![1](https://github.com/user-attachments/assets/e6f68fdc-4ad9-44ad-b4a9-059d61d546c8)  
-
+Création d'un nouveau compte avec la commande `adduser`
 
 ### Q.2.1.2
 Le compte que je viens de créer est pour mon usage personnel, j'opterais pour le moindre privilège et ne lui donnerais donc pas de privilèges `root`.
@@ -16,19 +14,17 @@ Je placerais ce compte dans le groupe `users` et je lui créerais son répertoir
 ### Q.2.2.1
 Pour désactiver le compte `root`, il faut modifier le fichier `sshd_config` en utilisant la commande suivante `nano /etc/ssh/sshd_config`  
 Il faut décommenter et modifier la ligne `PermitRootLogin` comme suit :  
-![2](https://github.com/user-attachments/assets/bf4d0d3e-3338-4301-ba13-17821ad2f047)  
+![2](https://github.com/user-attachments/assets/bf4d0d3e-3338-4301-ba13-17821ad2f04  
 
 
 ### Q.2.2.2
-Pour autoriser uniquement l'accès à distance à mon compte personnel, il faut ajouter la ligne `AllowUsers yohann` dans le fichier `sshd_config`  
-![3](https://github.com/user-attachments/assets/7752890d-334e-474b-8d02-803fa011636c)  
+Pour autoriser uniquement l'accès à distance à mon compte personnel, il faut ajouter la ligne `AllowUsers elsa` dans le fichier `sshd_config`  
 
 
 ### Q.2.2.3
 Pour mettre en place une authentification par clé valide et désactiver l'authentification par mot de passe, il faut :
   - Décommenter la ligne `PubkeyAuthentication` et bien vérifier qu'il est écrit `yes`
   - Décommenter la ligne `PasswordAuthentication` et écrire `no`  
-![4](https://github.com/user-attachments/assets/0f2d1ec4-4a0d-45a9-83f2-3ef227f64d53)  
 
   - Redémarrer le service ssh avec la commande `systemctl restart sshd`
   - Vérifier l'état du service ssh avec la commande `systemctl status sshd`
